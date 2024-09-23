@@ -1,15 +1,15 @@
 import streamlit as st
 
-st.title('나의 첫 웹 서비스 만들기!!')
+st.title('나의 첫 엄 서비스 만들기!!')
 
 # 사용자 입력 받기
 name = st.text_input('엄준식을 입력해주세요 : ')
-mbti = st.selectbox('MBTI를 선택해주세요:', [
+mbti = st.selectbox('UMBTI를 선택해주세요:', [
     'INTJ', 'INTP', 'ENTJ', 'ENTP', 'INFJ', 'INFP', 'ENFJ', 'ENFP', 
-    'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP'
+    'ISTJ', 'ISFJ', 'ESTJ', 'ESFJ', 'ISTP', 'ISFP', 'ESTP', 'ESFP', 'UMJS'
 ])
 
-# MBTI 설명 데이터 (더 자세히)
+# UMBTI 설명 데이터 (더 자세히)
 mbti_data = {
     'INTJ': {
         '특징': ' 전략적 사고와 높은 독립성을 가진 유형으로, 계획적이며 체계적입니다. '
@@ -123,6 +123,12 @@ mbti_data = {
         '직업': '간호사, 사회복지사, 상담사, 교사, 마케팅 전문가',
         '잘 맞는 MBTI': ['ISFJ', 'ISTJ']
     },
+    'UMJS': {
+        '특징': '깊은 이해력과 강한 동기 부여 능력을 가진 유형으로, 사람들의 감정을 잘 파악하고 공감합니다. '
+                '타인을 격려하며, 긍정적인 에너지를 주변에 퍼뜨리는 것을 중요시합니다. '
+                '신중한 판단력을 통해 갈등을 해결하고, 사람들 간의 조화를 이루려는 경향이 있습니다.',
+        '직업': '상담사, 인적 자원 관리, 커뮤니티 매니저, 교사, 사회복지사',
+        '잘 맞는 MBTI': ['INFJ', 'INFP']
 }
 
 if st.button('특징 생성'):
@@ -131,7 +137,7 @@ if st.button('특징 생성'):
         직업 = mbti_data[mbti]['직업']
         잘_맞는_mbti = ', '.join(mbti_data[mbti]['잘 맞는 MBTI'])
 
-        st.write(f"{name}님! 당신의 MBTI 유형은 {mbti}입니다!")
+        st.write(f"{name}님! 당신의 UMBTI 유형은 {mbti}입니다!")
         st.write(f"**특징**: {특징}")
         st.write(f"**어울리는 직업**: {직업}")
         st.write(f"**잘 맞는 MBTI 유형**: {잘_맞는_mbti}")
