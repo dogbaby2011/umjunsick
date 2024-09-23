@@ -1,6 +1,21 @@
 import streamlit as st
 
 st.title('나의 첫 엄 서비스 만들기!!')
+# CSS 스타일 정의
+st.markdown(
+    """
+    <style>
+    .colored-text {
+        color: #ff6347; /* Tomoto color */
+        font-size: 24px;
+        font-weight: bold;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown('<p class="colored-text">엄준식은 살아있다.</p>', unsafe_allow_html=True)
 
 # 사용자 입력 받기
 name = st.text_input('엄준식을 입력해주세요 : ')
